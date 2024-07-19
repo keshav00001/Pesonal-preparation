@@ -27,9 +27,11 @@ Actions are plain JavaScript objects that describe what happened. For example:
 
 
 // actions.js
+
 export const increment = () => ({
   type: 'INCREMENT'
 });
+
 
 export const decrement = () => ({
   type: 'DECREMENT'
@@ -37,6 +39,7 @@ export const decrement = () => ({
 
 
 Step 3: Create Reducers
+
 Reducers specify how the application's state changes in response to actions:
 
 
@@ -47,10 +50,14 @@ const initialState = {
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
+
     case 'INCREMENT':
+
       return { ...state, count: state.count + 1 };
+
     case 'DECREMENT':
       return { ...state, count: state.count - 1 };
+
     default:
       return state;
   }
@@ -64,7 +71,9 @@ Step 4: Create a Redux Store
 
 
 // store.js
+
 import { createStore } from 'redux';
+
 import counterReducer from './reducers';
 
 const store = createStore(counterReducer);
@@ -73,7 +82,10 @@ export default store;
 
 
 // store.js
+
+
 import { createStore } from 'redux';
+
 import counterReducer from './reducers';
 
 const store = createStore(counterReducer);
@@ -87,16 +99,25 @@ Wrap your root component with Provider from react-redux to make the Redux store 
 
 
 // index.js or App.js
+
 import React from 'react';
+
 import ReactDOM from 'react-dom';
+
 import { Provider } from 'react-redux';
+
 import store from './store';
+
 import App from './App';
 
 ReactDOM.render(
+
   <Provider store={store}>
+
     <App />
+
   </Provider>,
+
   document.getElementById('root')
 );
 
@@ -107,20 +128,30 @@ Use connect from react-redux to connect your React components to the Redux store
 
 
 // App.js
+
 import React from 'react';
+
 import { connect } from 'react-redux';
+
 import { increment, decrement } from './actions';
 
 const App = ({ count, increment, decrement }) => (
+
   <div>
     <h2>Count: {count}</h2>
+
     <button onClick={increment}>Increment</button>
+
     <button onClick={decrement}>Decrement</button>
+
   </div>
 );
 
+
 const mapStateToProps = state => ({
+
   count: state.count
+  
 });
 
 export default connect(mapStateToProps, { increment, decrement })(App);
