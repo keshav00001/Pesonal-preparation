@@ -160,6 +160,75 @@ export default connect(mapStateToProps, { increment, decrement })(App);
 
 
 
+Ques.
+What is thunk? Why we use despite of react redux. And it's advantages. please explain 
+
+Ans.->>
+    In the context of React and Redux, a "thunk" refers to a function that delays the execution of code. Redux Thunk is a middleware for Redux that enables the use of asynchronous logic in your Redux actions.
+
+    We use thunks alongside React Redux when we need to handle asynchronous operations, like fetching data from an API, before updating the Redux store. Thunks allow us to dispatch actions with side effects, such as API calls, and handle them in a more organized manner.
+
+
+    Advantages of using thunks in React Redux include:
+
+    1.Asynchronous Operations: Thunks enable the handling of asynchronous actions, making it possible to manage side effects like data fetching without blocking the UI.
+
+    2.Simplified Action Creators: Thunks provide a way to encapsulate complex logic within action creators, improving code organization and maintainability.
+
+    3.Middleware Integration: Redux Thunk seamlessly integrates with Redux middleware, allowing for a smooth workflow when dealing with asynchronous tasks.
+
+    4.Conditional Dispatch: Thunks allow for conditional dispatching of actions based on certain conditions, providing flexibility in managing the flow of actions.
+
+Overall, Redux Thunk is a powerful tool that enhances the capabilities of Redux by facilitating the handling of asynchronous operations in a React application.
+
+   Eg.
+
+
+              // With Redux Thunk Middleware
+
+            import { createStore, applyMiddleware } from 'redux';
+            import thunk from 'redux-thunk';
+
+            // action types
+            const INCREMENT = 'INCREMENT';
+
+            // action creator
+            const increment = () => ({ type: INCREMENT });
+
+            // async action creator with Redux Thunk
+            const incrementAsync = () => {
+              return (dispatch) => {
+                setTimeout(() => {
+                  dispatch(increment());
+                }, 1000);
+              };
+            };
+
+            // reducer
+            const counterReducer = (state = 0, action) => {
+              switch (action.type) {
+                case INCREMENT:
+                  return state + 1;
+                default:
+                  return state;
+              }
+            };
+
+            // store with Redux Thunk middleware
+            const store = createStore(counterReducer, applyMiddleware(thunk));
+
+            // dispatch an asynchronous action
+            store.dispatch(incrementAsync());
+
+            
+            In this example, we added Redux Thunk middleware using applyMiddleware(thunk) when creating the store. Now, the incrementAsync action creator can perform asynchronous operations before dispatching the INCREMENT action. This is the power of middleware in Redux, and Redux Thunk specifically enables handling asynchronous logic within action creators.
+
+
+
+
+Ques.
+
+
 
 
 
