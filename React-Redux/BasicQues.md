@@ -44,6 +44,7 @@ Reducers specify how the application's state changes in response to actions:
 
 
 // reducers.js
+
 const initialState = {
   count: 0
 };
@@ -151,7 +152,7 @@ const App = ({ count, increment, decrement }) => (
 const mapStateToProps = state => ({
 
   count: state.count
-  
+
 });
 
 export default connect(mapStateToProps, { increment, decrement })(App);
