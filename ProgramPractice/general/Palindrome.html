@@ -1,0 +1,42 @@
+<html>
+
+
+<script>
+    function isNumberPalindrome(num) {
+    let originalNum = num;
+    let reversedNum = 0;
+
+    while (num > 0) {
+        // Get the last digit
+        const digit = num % 10;
+        // Build the reversed number
+        reversedNum = reversedNum * 10 + digit;
+        // Remove the last digit from the original number
+        num = Math.floor(num / 10);
+    }
+
+    return originalNum === reversedNum;
+}
+
+
+const inputs = 123210;
+
+//  let ans= isNumberPalindrome(input)
+ if (isNumberPalindrome(inputs)) {
+        console.log(`${inputs} is a palindrome.`);
+    } else {
+        console.log(`${inputs} is not a palindrome.`);
+    }
+// Example usage
+// const inputs = [12321, 12345, 45654, 1234321];
+
+// inputs.forEach(input => {
+//     if (isNumberPalindrome(input)) {
+//         console.log(`${input} is a palindrome.`);
+//     } else {
+//         console.log(`${input} is not a palindrome.`);
+//     }
+// });
+
+</script>
+</html>

@@ -1,0 +1,40 @@
+<html>
+
+<!-- Simple way -->
+<script>
+    function flattenArray(arr) {
+        return arr.flat(Infinity);
+    }
+
+    // Example usage
+    const nestedArray = [1, [2, [3, 4], 5], [6, [7, 8], 9]];
+    const flatArray = flattenArray(nestedArray);
+    console.log(flatArray); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+</script>
+
+<!-- 2nd way -->
+
+<script>
+function flattenArray(arr) {
+  return arr.reduce((flattened, element) => {
+    if (Array.isArray(element)) {
+      // Recursively flatten if the element is an array
+      return flattened.concat(flattenArray(element));
+    } else {
+      // Otherwise, add the element to the result
+      return flattened.concat(element);
+    }
+  }, []);
+}
+
+// Example usage
+const nestedArray2 = [1, [2, [3, 4], 5], [6, [7, 8], 9]];
+const flatArray2 = flattenArray(nestedArray2);
+console.log(flatArray2); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    
+</script>
+
+
+</html>

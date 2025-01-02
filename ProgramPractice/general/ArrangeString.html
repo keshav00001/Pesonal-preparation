@@ -1,0 +1,53 @@
+<html>
+<script>
+    function canFormString(str1, str2) {
+        // Check if the lengths are the same
+        if (str1.length !== str2.length) {
+            return false;
+        }
+
+        // Sort both strings and compare
+        return str1.split('').sort().join('') === str2.split('').sort().join('');
+    }
+
+    // Example usage
+    console.log(canFormString("listen", "silent")); // true
+    console.log(canFormString("hello", "world"));   // false
+
+
+</script>
+
+
+
+<!-- 2nd way -->
+
+<script>
+
+function canFormString(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  let arr2 = str2.split('');
+
+  for (let i = 0; i < str1.length; i++) {
+    const char = str1[i];
+    const index = arr2.indexOf(char);
+
+    if (index === -1) {
+      return false;
+    }
+
+    arr2.splice(index, 1);
+  }
+
+  return true;
+}
+
+// Example usage
+console.log(canFormString("listen", "silent")); // true
+console.log(canFormString("hello", "world"));   // false
+
+</script>
+
+</html>

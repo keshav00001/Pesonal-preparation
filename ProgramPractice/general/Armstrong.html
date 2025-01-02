@@ -1,0 +1,47 @@
+<html>
+<script>
+
+
+function isArmstrongNumber(num) {
+
+    if (typeof num !== 'number' || isNaN(num) || num < 0) {
+        return null; // Invalid input
+    }
+
+    let originalNum = num; // Store the original number
+    let d = 0; // Variable to store the sum of cubes of digits
+    let x = num; // Use a temporary variable to manipulate
+
+    // Loop until all digits are processed
+    while (x > 0) {
+        let e = x % 10; // Extract the last digit
+        x = parseInt(x / 10); // Remove the last digit
+        d = d + (e * e * e); // Add the cube of the digit to d
+    }
+
+    // Check if the sum of cubes is equal to the original number
+    return d === originalNum;
+}
+
+
+const input = prompt("Enter a number to test if it is an Armstrong number:");
+const numberToTest = Number(input);
+
+if (numberToTest === null) {
+    console.log("Invalid input. Please enter a valid number.");
+} else {
+    if (isArmstrongNumber(numberToTest) === null) {
+        console.log("Invalid input. Please enter a non-negative number.");
+    } else if (isArmstrongNumber(numberToTest)) {
+        console.log(`${numberToTest} is an Armstrong number.`);
+    } else {
+        console.log(`${numberToTest} is not an Armstrong number.`);
+    }
+}
+
+
+
+
+</script>
+
+</html>

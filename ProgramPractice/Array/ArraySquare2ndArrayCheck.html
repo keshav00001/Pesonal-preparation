@@ -1,0 +1,88 @@
+<html>
+    <!-- 1stway -->
+    <script>
+function haveSameSquaredValues(arr1, arr2) {
+  // Check if the lengths of the arrays are different
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  
+  // Create frequency maps for each array
+  const freqMap1 = {};
+  const freqMap2 = {};
+
+  for (let num of arr1) {
+    freqMap1[num] = (freqMap1[num] || 0) + 1;
+  }
+
+  for (let num of arr2) {
+    freqMap2[num] = (freqMap2[num] || 0) + 1;
+  }
+
+  // Check if every element in freqMap1 has its squared counterpart in freqMap2
+  for (let key in freqMap1) {
+    const squaredValue = key * key;
+    if (freqMap1[key] !== freqMap2[squaredValue] || freqMap2[squaredValue] === undefined) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Example usage
+console.log(haveSameSquaredValues([1, 2, 3], [1, 4, 9])); // true
+console.log(haveSameSquaredValues([1, 2, 3], [1, 4, 8])); // false
+console.log(haveSameSquaredValues([1, 2, 2], [1, 4, 4])); // true
+console.log(haveSameSquaredValues([1, 2, 2], [1, 4, 9])); // false
+
+    </script>
+
+
+
+
+<!-- 2ndway -->
+
+
+<script>
+    function haveSameSquaredValues(arr1, arr2) {
+  // Check if the lengths of the arrays are different
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+
+  // Create frequency maps for each array
+  const freqMap1 = {};
+  const freqMap2 = {};
+
+  // Populate the frequency map for arr1
+  for (let i = 0; i < arr1.length; i++) {
+    const num = arr1[i];
+    freqMap1[num] = (freqMap1[num] || 0) + 1;
+  }
+
+  // Populate the frequency map for arr2
+  for (let i = 0; i < arr2.length; i++) {
+    const num = arr2[i];
+    freqMap2[num] = (freqMap2[num] || 0) + 1;
+  }
+
+  // Check if every element in freqMap1 has its squared counterpart in freqMap2
+  for (let key in freqMap1) {
+    const squaredValue = key * key;
+    if (freqMap1[key] !== freqMap2[squaredValue] || freqMap2[squaredValue] === undefined) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Example usage
+console.log(haveSameSquaredValues([1, 2, 3], [1, 4, 9])); // true
+console.log(haveSameSquaredValues([1, 2, 3], [1, 4, 8])); // false
+console.log(haveSameSquaredValues([1, 2, 2], [1, 4, 4])); // true
+console.log(haveSameSquaredValues([1, 2, 2], [1, 4, 9])); // false
+
+</script>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <script>
+        function memoizeAddition() {
+  const cache = new Map();
+
+  return function(a, b) {
+    // Create a unique key for the sum based on the arguments
+    const key = `${a},${b}`;
+
+    // Check if the result is already in the cache
+    if (cache.has(key)) {
+      console.log('Fetching from cache');
+      return cache.get(key);
+    }
+
+    // Otherwise, compute the sum and store it in the cache
+    console.log('Calculating new result');
+    const result = a + b;
+    cache.set(key, result);
+    return result;
+  };
+}
+
+
+
+
+
+const add = memoizeAddition();
+
+console.log(add(2, 3)); // Output: Calculating new result 5
+console.log(add(2, 3)); // Output: Fetching from cache 5
+console.log(add(5, 7)); // Output: Calculating new result 12
+console.log(add(5, 7)); // Output: Fetching from cache 12
+console.log(add(3, 2)); // Output: Calculating new result 5 (Note: 3+2 and 2+3 are treated as different keys)
+console.log(add(2, 3)); // Output: Fetching from cache 5
+
+    </script>
+</html>

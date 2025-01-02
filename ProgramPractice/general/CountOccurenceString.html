@@ -1,0 +1,24 @@
+<html>
+<script>
+    function countCharacterOccurrences(str) {
+        const counts = {}; // Object to store character counts
+
+        for (const char of str) {
+            if (counts[char]) {
+                counts[char] += 1;
+            } else {
+                counts[char] = 1;
+            }
+        }
+
+        return counts;
+    }
+
+    // Example usage:
+    const inputString = "hello world";
+    console.log(countCharacterOccurrences(inputString));
+
+
+</script>
+
+</html>

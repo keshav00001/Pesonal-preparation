@@ -1,0 +1,49 @@
+<html>
+    <script>
+
+const inputArray = [
+  { name: "sai" },
+  { name: "Nang" },
+  { name: "sai" },
+  { name: "Nang" },
+  { name: "111111" }
+];
+
+// Use filter and map to get unique objects based on the `name` property
+const uniqueArray = inputArray.filter((value, index, self) =>
+  index === self.findIndex((obj) => obj.name === value.name)
+);
+
+console.log(uniqueArray);
+
+    </script>
+
+
+
+<!-- //use simple Loop -->
+
+<script>
+    const inputArray2 = [
+  { name: "sai" },
+  { name: "Nang" },
+  { name: "sai" },
+  { name: "Nang" },
+  { name: "111111" }
+];
+
+const uniqueArray2 = [];
+const seenNames = {};
+
+for (let i = 0; i < inputArray2.length; i++) {
+  const currentName = inputArray2[i].name;
+  if (!seenNames[currentName]) {
+    seenNames[currentName] = true;
+    uniqueArray2.push(inputArray2[i]);
+  }
+}
+
+console.log(uniqueArray2);
+
+</script>
+
+</html>

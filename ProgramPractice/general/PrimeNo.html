@@ -1,0 +1,118 @@
+<html>
+    <script>
+
+function myFunction(a) {
+    
+    if (a <= 1) {
+        console.log("Not Prime");
+        return;
+    }
+        // for (i = 2; i <= a - 1; i++) {
+        //     if (a % i == 0) {
+        //         console.log("Not Prime");
+        //         return;
+        //     }
+        // }
+
+
+        // Loop from 2 to the square root of 'a'
+    for (let i = 2; i <= Math.sqrt(a); i++) {
+        if (a % i === 0) {
+            console.log("Not Prime");
+            return;
+        }
+    }
+        console.log("Prime");
+        return;
+    }
+    myFunction(0); 
+
+        myFunction(1);
+
+    </script>
+
+
+
+    <!-- 2nd way -->
+
+<script>
+    function isPrime(num) {
+    if (num <= 1) {
+        return false; // Numbers less than or equal to 1 are not prime
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false; // If divisible by any number other than 1 and itself, not prime
+        }
+    }
+    return true; // If no divisors found, it is prime
+}
+
+function checkStringForPrime(input) {
+    // Try to convert the string to a number
+    const num = Number(input);
+    
+    // Check if the conversion is a valid number and if it's prime
+    if (isNaN(num)) {
+        console.log(input + " is not a valid number.");
+    } else if (isPrime(num)) {
+        console.log(input + " represents a prime number.");
+    } else {
+        console.log(input + " represents a non-prime number.");
+    }
+}
+
+// Example Usage
+checkStringForPrime("29");  // Output: 29 represents a prime number.
+checkStringForPrime("10");  // Output: 10 represents a non-prime number.
+checkStringForPrime("Hello"); // Output: Hello is not a valid number.
+checkStringForPrime("1");   // Output: 1 represents a non-prime number.
+
+</script>
+
+
+
+<!-- ..............check Prime in Array............-->
+
+<script>
+
+    // Function to check if a number is prime
+function isPrime(num) {
+    if (num <= 1) {
+        return false; // Numbers less than or equal to 1 are not prime
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false; // If divisible by any number other than 1 and itself, not prime
+        }
+    }
+    return true; // If no divisors found, the number is prime
+}
+
+// Function to check prime numbers in an array
+function checkPrimesInArray(arr) {
+    arr.forEach(num => {
+        if (isNaN(num)) {
+            console.log(num + " is not a valid number.");
+        } else if (isPrime(num)) {
+            console.log(num + " is a prime number.");
+        } else {
+            console.log(num + " is not a prime number.");
+        }
+    });
+}
+
+// Example Usage
+let numbers = [29, 10, 13, "Hello", 1, -5, 2];
+checkPrimesInArray(numbers);
+
+</script>
+
+
+
+
+
+
+
+
+</html>

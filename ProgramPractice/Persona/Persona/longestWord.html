@@ -1,0 +1,24 @@
+<html>
+<script>
+
+    let checkLongword = (sentenced) => {
+
+        let words = sentenced.split(" ");
+
+        let longwords = "";
+
+        for (let i = 0; i < words.length; i++)
+            if (words[i].length > longwords.length)
+                longwords = words[i]
+        return longwords;
+
+
+
+    }
+
+    let sentenced = "The quick brown fox jumped over the lazy dog";
+    let longestword = checkLongword(sentenced);
+    console.log("..........longestword.............", longestword)
+</script>
+
+</html>

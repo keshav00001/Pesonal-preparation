@@ -1,0 +1,148 @@
+<html>
+<!-- // First way -->
+<script>
+    function removeDuplicates(arr) {
+        // Use a Set to automatically remove duplicates
+        return [...new Set(arr)];
+    }
+
+    // Example usage
+    const array = [1, 2, 3, 2, 4, 5, 1];
+    const uniqueArray = removeDuplicates(array);
+
+    console.log(uniqueArray); // Output: [1, 2, 3, 4, 5]
+
+</script>
+
+<!-- 2nd way -->
+
+<script>
+    function removeDuplicates2(arr) {
+        return arr.filter((value, index, self) => self.indexOf(value) === index);
+    }
+
+    // Example usage
+    const array2 = [1, 2, 3, 2, 4, 5, 1];
+    const uniqueArray2 = removeDuplicates2(array);
+
+    console.log(uniqueArray2); // Output: [1, 2, 3, 4, 5]
+
+</script>
+
+<!-- Using filter method -->
+
+
+
+<script>
+const arrayfil = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+  { name: 'Alice', age: 28 },
+  { name: 'Charlie', age: 35 }
+];
+
+function removeDuplicatesByProperty(arr, prop) {
+  return arrayfil.filter((item, index, self) => self.findIndex(t => t[prop] === item[prop]) === index);
+}
+
+// Example usage
+console.log(removeDuplicatesByProperty(array, 'name'));
+// Output: 
+// [
+//   { name: 'Alice', age: 25 },
+//   { name: 'Bob', age: 30 },
+//   { name: 'Charlie', age: 35 }
+// ]
+
+</script>
+
+<!-- ///.......Using Includes method remove duplicate -->
+
+<script>
+
+function removeDuplicatesinclu(arr) {
+  const uniqueArray = [];
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (!uniqueArray.includes(arr[i])) {
+      uniqueArray.push(arr[i]);
+    }
+  }
+  
+  return uniqueArray;
+}
+
+// Example usage
+const arrayinc = [1, 2, 3, 2, 4, 5, 1];
+console.log(removeDuplicatesinclu(arrayinc)); // Output: [1, 2, 3, 4, 5]
+
+</script>
+
+
+   <!-- using loop remove duplicate -->
+
+<script>
+function removeDuplicatesloop(arr) {
+  const uniqueArray = [];
+  
+  for (let i = 0; i < arr.length; i++) {
+    let isDuplicate = false;
+    
+    // Check if the current element is already in uniqueArray
+    for (let j = 0; j < uniqueArray.length; j++) {
+      if (arr[i] === uniqueArray[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+    
+    // If not a duplicate, add it to uniqueArray
+    if (!isDuplicate) {
+      uniqueArray.push(arr[i]);
+    }
+  }
+  
+  return uniqueArray;
+}
+
+// Example usage
+const arrayl = [1, 2, 3, 2, 4, 5, 1];
+console.log(removeDuplicatesloop(arrayl)); // Output: [1, 2, 3, 4, 5]
+
+</script>
+
+
+<!-- withput predefind remove duplicate object remove  -->
+
+<script>
+    const arrayfilOb = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+  { name: 'Alice', age: 28 },
+  { name: 'Charlie', age: 35 }
+];
+
+const uniqueArrayof = [];
+
+for (const person of arrayfilOb) {
+  // Check if the person with the same name already exists in the uniqueArray
+  let isDuplicate = false;
+  for (const uniquePerson of uniqueArrayof) {
+    if (uniquePerson.name === person.name) {
+      isDuplicate = true;
+      break;
+    }
+  }
+
+  // If not a duplicate, add it to uniqueArray
+  if (!isDuplicate) {
+    uniqueArrayof.push(person);
+  }
+}
+
+console.log(uniqueArrayof);
+
+</script>
+
+
+</html>

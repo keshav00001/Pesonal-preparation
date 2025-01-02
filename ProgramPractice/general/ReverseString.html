@@ -1,0 +1,46 @@
+<html>
+    <script>
+let str = "my name is hello";
+
+// Split the string into an array of words
+let words = str.split(" ");
+let reversedWords = [];
+
+// Loop through each word
+for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    let reversedWord = '';
+
+    // Reverse the characters in the word using another loop
+    for (let j = word.length - 1; j >= 0; j--) {
+        reversedWord += word[j];
+    }
+
+    // Push the reversed word to the result array
+    reversedWords.push(reversedWord);
+}
+
+// Join the reversed words into a single string with spaces in between
+let reversedStr = reversedWords.join(" ");
+
+console.log(reversedStr);  // "ym eman si olleh"
+
+
+
+//2nd way
+
+// let str = "my name is hello";
+
+// // Split the string into an array of words
+// let words = str.split(" ");
+
+// // Reverse each word and join them back into a string
+// let reversedStr = words.map(word => word.split("").reverse().join("")).join(" ");
+
+// console.log(reversedStr);  // "ym eman si olleh"
+
+
+
+
+    </script>
+</html>

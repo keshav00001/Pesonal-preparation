@@ -1,0 +1,59 @@
+<html>
+    <script>
+
+function fibonacciSeries(number) {
+    let n1 = 0, n2 = 1, nextTerm;
+
+    // Print the first two terms
+    console.log(n1); // First term: 0
+    if (number > 1) {
+        console.log(n2); // Second term: 1
+    }
+
+    // Generate the rest of the Fibonacci sequence
+    for (let i = 3; i <= number; i++) {
+        nextTerm = n1 + n2; // Calculate the next term
+        console.log(nextTerm); // Print the next term
+        n1 = n2; // Move the n1 to n2
+        n2 = nextTerm; // Move the n2 to the new next term
+    }
+}
+
+// Example usage
+let numberOfTerms = 10; // Change this value for different lengths of the series
+fibonacciSeries(numberOfTerms);
+
+    </script>
+
+
+<!-- using recursion Fabinici series -->
+
+<script>
+    function fibonacci(n) {
+  // Base case: Return n if it's 0 or 1
+  if (n <= 1) {
+    return n;
+  }
+
+  // Recursive case: Sum of the two previous Fibonacci numbers
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+function generateFibonacciSeries(n) {
+  let series = [];
+  for (let i = 0; i < n; i++) {
+    series.push(fibonacci(i));
+  }
+  return series;
+}
+
+// Example usage
+let numberOfTerm = 10; // Change this value for different lengths of the series
+let fibSeries = generateFibonacciSeries(numberOfTerm);
+console.log(fibSeries);
+
+</script>
+
+
+
+</html>

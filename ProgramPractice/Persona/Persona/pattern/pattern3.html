@@ -1,0 +1,18 @@
+<html>
+<script>
+    function printPattern(num) {
+        for (let i = num; i >= 1; i--) {
+            let line = '';
+            for (let j = num; j >= i; j--) {
+                line += j + ' ';
+            }
+            console.log(line.trim());
+        }
+    }
+
+    // Example usage:
+    printPattern(5)
+
+</script>
+
+</html>

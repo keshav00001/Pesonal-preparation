@@ -1,0 +1,52 @@
+<html>
+    <script>
+        let list1 = ['name', 'langauge', 'framework', 'place', 'years'];
+let list2 = ['Dev', 'JS', 'vueJs', 'Gurugram', 4];
+
+// Using map to create an array of objects
+let result = list1.map((key, index) => {
+  let obj = {};
+  obj[key] = list2[index];
+  return obj;
+});
+
+console.log(result);
+
+    </script>
+
+
+<!-- 2nd -->
+
+<script>
+
+let products = [
+  { pid: 1, pname: "mobile", category: 1 },
+  { pid: 2, pname: "laptop", category: 1 },
+  { pid: 3, pname: "BED", category: 2 },
+  { pid: 4, pname: "table", category: 2 },
+];
+
+let category = [
+  { id: 1, category_name: "electronics" },
+  { id: 2, category_name: "furniture" },
+];
+
+
+let categoryMap = category.reduce((acc, curr) => {
+  acc[curr.id] = curr.category_name;
+  return acc;
+}, {});
+
+
+let updatedProducts = products.map(product => ({
+  ...product,
+  category: categoryMap[product.category]
+}));
+
+console.log(updatedProducts);
+</script>
+
+
+
+
+</html>

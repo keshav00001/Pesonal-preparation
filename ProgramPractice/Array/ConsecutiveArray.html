@@ -1,0 +1,76 @@
+<html>
+
+<!-- max count of consecutive 1’s in an array -->
+
+<script>
+    function findMaxConsecutiveOnes(nums) {
+        let maxCount = 0;
+        let currentCount = 0;
+
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] === 1) {
+                currentCount++;
+                maxCount = Math.max(maxCount, currentCount);
+            } else {
+                currentCount = 0;
+            }
+        }
+
+        return maxCount;
+    }
+
+    // Example usage:
+    const array = [1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1];
+    console.log(findMaxConsecutiveOnes(array)); // Output: 4
+
+</script>
+
+
+<!-- // Max count char -->
+
+<script>
+function findMaxConsecutiveChar(str) {
+    let maxCount = 0;
+    let currentCount = 1; // Start with 1 since we are looking at the first character
+    let maxChar = str[0]; // Initialize the character with the first character
+    let currentChar = str[0];
+
+    for (let i = 1; i < str.length; i++) {
+        if (str[i] === currentChar) {
+            currentCount++;
+        } else {
+            // Check if the current sequence is the longest found so far
+            if (currentCount > maxCount) {
+                maxCount = currentCount;
+                maxChar = currentChar;
+            }
+            // Reset for the new character
+            currentChar = str[i];
+            currentCount = 1;
+        }
+    }
+
+    // Final check for the last sequence
+    if (currentCount > maxCount) {
+        maxCount = currentCount;
+        maxChar = currentChar;
+    }
+
+    return { maxChar, maxCount };
+}
+
+// Example usage:
+const input = "appleeeeeppp";
+console.log(findMaxConsecutiveChar(input)); // Output: { maxChar: 'e', maxCount: 4 }
+
+</script>
+
+<!-- how many occurences -->
+
+<script>
+
+    
+</script>
+
+
+</html>

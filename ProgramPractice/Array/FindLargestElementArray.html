@@ -1,0 +1,88 @@
+<html>
+
+
+<!-- Write a JavaScript program to find the largest element in a nested array.
+[[3, 4, 58], [709, 8, 9, [10, 11]], [111, 2]] -->
+
+    <!-- 1st way -->
+    <script>
+        function findLargestElement(arr) {
+    // Flatten the nested array into a single-level array
+    const flatArray = arr.flat(Infinity);
+
+    // Find the largest element in the flattened array
+    return Math.max(...flatArray);
+}
+
+// Test the function with the given nested array
+const nestedArray = [[3, 4, 58], [709, 8, 9, [10, 11]], [111, 2]];
+console.log(findLargestElement(nestedArray)); // Output: 709
+
+    </script>
+
+
+
+<!-- 2nd way -->
+
+<script>
+    function findLargestElement(arr) {
+    let max = -Infinity; // Initialize max with the smallest possible value
+
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            // If the element is an array, call the function recursively
+            max = Math.max(max, findLargestElement(arr[i]));
+        } else {
+            // If the element is not an array, compare it with the current max
+            max = Math.max(max, arr[i]);
+        }
+    }
+
+    return max;
+}
+
+// Test the function with the given nested array
+const nestedArray2 = [[3, 4, 58], [709, 8, 9, [10, 11]], [111, 2]];
+console.log(findLargestElement(nestedArray2)); // Output: 709
+
+</script>
+
+
+<!-- // 3rd way -->
+
+
+<script>
+
+function findLargestElement(arr) {
+    let max = -Infinity; // Initialize max with the smallest possible value
+
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            // If the element is an array, loop through it manually
+            for (let j = 0; j < arr[i].length; j++) {
+                if (Array.isArray(arr[i][j])) {
+                    // If an element in the sub-array is also an array, handle it recursively
+                    for (let k = 0; k < arr[i][j].length; k++) {
+                        max = Math.max(max, arr[i][j][k]);
+                    }
+                } else {
+                    // Compare the current element with the current max
+                    max = Math.max(max, arr[i][j]);
+                }
+            }
+        } else {
+            // If the element is not an array, compare it with the current max
+            max = Math.max(max, arr[i]);
+        }
+    }
+
+    return max;
+}
+
+// Test the function with the given nested array
+const nestedArray3 = [[3, 4, 58], [709, 8, 9, [10, 11]], [111, 2]];
+console.log(findLargestElement(nestedArray3)); // Output: 709
+
+</script>
+
+</html>

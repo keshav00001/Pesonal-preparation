@@ -1,0 +1,91 @@
+<html>
+  <!-- 1st way -->
+  <script>
+    (function() {
+      const array1 = [0, 3, 4, 31];
+      const array2 = [4, 6, 30];
+
+      // Merge the arrays
+      const mergedArray = array1.concat(array2);
+
+      // Sort the merged array
+      mergedArray.sort((a, b) => a - b);
+
+      console.log(mergedArray); // Output: [0, 3, 4, 4, 6, 30, 31]
+    })();
+  </script>
+
+  <!-- 2nd way -->
+  <script>
+    (function() {
+      const array1 = [0, 3, 4, 31];
+      const array2 = [4, 6, 30];
+
+      // Initialize an empty array for the merged result
+      let mergedArray = [];
+      let i = 0;
+      let j = 0;
+
+      // Merge the arrays using a loop
+      while (i < array1.length && j < array2.length) {
+        if (array1[i] <= array2[j]) {
+          mergedArray.push(array1[i]);
+          i++;
+        } else {
+          mergedArray.push(array2[j]);
+          j++;
+        }
+      }
+
+      // If there are remaining elements in array1
+      while (i < array1.length) {
+        mergedArray.push(array1[i]);
+        i++;
+      }
+
+      // If there are remaining elements in array2
+      while (j < array2.length) {
+        mergedArray.push(array2[j]);
+        j++;
+      }
+
+      console.log(mergedArray); // Output: [0, 3, 4, 4, 6, 30, 31]
+    })();
+  </script>
+
+  <!-- 3rd way -->
+  <script>
+    (function() {
+      const array1 = [0, 3, 4, 31];
+      const array2 = [4, 6, 30];
+
+      // Initialize the merged array and pointers
+      let mergedArray = [];
+      let i = 0;
+      let j = 0;
+
+      // Merge the arrays using a for loop
+      for (; i < array1.length && j < array2.length;) {
+        if (array1[i] <= array2[j]) {
+          mergedArray.push(array1[i]);
+          i++;
+        } else {
+          mergedArray.push(array2[j]);
+          j++;
+        }
+      }
+
+      // Add any remaining elements from array1
+      for (; i < array1.length; i++) {
+        mergedArray.push(array1[i]);
+      }
+
+      // Add any remaining elements from array2
+      for (; j < array2.length; j++) {
+        mergedArray.push(array2[j]);
+      }
+
+      console.log(mergedArray); // Output: [0, 3, 4, 4, 6, 30, 31]
+    })();
+  </script>
+</html>

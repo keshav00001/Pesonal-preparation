@@ -1,0 +1,324 @@
+Birock Password:
+
+Bigrock@Pass11
+
+
+................................
+ DIgital ocean PAssword
+kKeshav@96721923k
+
+...................   OPEN BY TERMINAL..and ACCESS.........
+open system cmd  
+   ssh root@159.89.170.52
+
+enter your password and enter
+      : kKeshav@96721923k
+
+Note:(password will not show that's will be hidden and enter)
+
+
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# ls
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# ls -a
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# exit
+
+logout
+
+......................................
+		Make Password less
+......................................
+
+
+example :
+
+ssh-keygen -f C:\Users\keshav.kumar\.ssh/my_key -t rsa -b 4096
+
+ssh-keygen -t rsa -b 4096
+enter-->
+
+result  
+
+
+C:\Users\keshav.kumar>ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\keshav.kumar/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\keshav.kumar/.ssh/id_rsa.
+Your public key has been saved in C:\Users\keshav.kumar/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:6iRcSuldKS8uVBt/ZJ+DVHCvbvB2GbRrWoxpd/bdEdA faircent\keshav.kumar@FC-LT-334
+The key's randomart image is:
++---[RSA 4096]----+
+|          ...    |
+|           ....  |
+|           . .oE |
+|     .o  .+  o.. |
+|    o.o+S+.o..o. |
+|   +.+.=. o+++ +.|
+|   .= = ..  O.O.o|
+|    .= .   + * o=|
+|     .o     .   +|
++----[SHA256]-----+
+
+
+Again>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+C:\Users\keshav.kumar>ssh root@159.89.170.52
+root@159.89.170.52's password:
+
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# ls -a
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# pwd
+
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# mkdir .ssh
+
+exist.
+
+root:
+
+ scp -P 22 C:\Users\keshav.kumar\.ssh\id_rsa.pub root@159.89.170.52:/root/.ssh/authorized_keys
+
+
+ENTEter Again ask password
+
+
+C:\Users\keshav.kumar>ssh root@159.89.170.52
+
+Now become password less
+
+................................................
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# ls -a
+.  ..  .bash_history  .bashrc  .cache  .cloud-locale-test.skip  .profile  .ssh  .wget-hsts
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# cd .ssh
+root@ubuntu-s-1vcpu-2gb-blr1-01:~/.ssh# ls -a
+.  ..  authorized_keys
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~/.ssh# nano authorized_keys
+
+
+
+
+
+
+
+(we can create new folder and do ur work)
+.....................................................................
+
+How to Install LAMP Stack on VPS Hosting Remote Server 
+
+......................................................................
+Updates the package lists for Upgrades then Upgrade :
+
+apt update
+
+
+Install Apache:
+
+apt install apache2
+
+
+Allow Apache through Firewall
+
+ufw allow "Apache Full"
+
+ufw status verbose
+
+ ufw allow ssh
+
+ufw enable
+
+
+
+
+.......................................................................................
+
+.......................................................................................
+
+cmd  
+C:\Users\keshav.kumar>ssh root@159.89.170.52
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# cd /var/www/
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/www# cd ..
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var# ls
+ajay  backups  cache  crash  lib  local  lock  log  mail  opt  run  snap  spool  tmp  www
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var# mkdir myapp
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var# ls
+ajay  backups  cache  crash  lib  local  lock  log  mail  myapp  opt  run  snap  spool  tmp  www
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var# cd myapp/
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/myapp# ls
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/myapp# pwd
+/var/myapp
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/myapp# ls
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/myapp# pwd
+/var/myapp
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/myapp# ls
+build
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/myapp# cd build/
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/myapp/build# pwd
+/var/myapp/build
+
+
+
+open new cmd:
+...............................................
+scp -P 22 build.zip root@159.89.170.52:/var/www
+................................................
+
+scp -r .\build root@159.89.170.52:\var\myapp
+
+
+
+To Access Remote Server via SSH:
+
+Create Virtual Host File
+
+
+cd /etc/apache2/sites-available/your_domain.conf
+
+nano /etc/apache2/sites-available/your_domain.conf
+
+
+
+
+/var/myapp/build
+
+........................................................
+This is our current project CMD. when we will below command enter this build.zip will copy and reached at 
+remote server:-
+
+scp -p build.zip root@159.89.170.52:
+
+
+Here to open new CMD:-
+To Access Remote Server via SSH
+
+Syntax:- ssh -p PORT USERNAME@HOSTIP
+Example:- ssh -p 22 root@216.32.44.12
+
+
+Note:- Run Below Commands on Your Remote Server Linux Machine or VPS, Not on Your Local Windows Machine
+Go to the Destination Path Where you copied the zip file
+
+Syntax:- cd Destination_Path
+Example:- cd /var/www
+
+
+Run ls command to verify that the zip file is present
+ls
+
+
+Unzip the Copied Zip File
+Syntax:- unzip zip_file_name
+Example:- unzip osmsProject.zip
+
+Verify that all required softwares are installed
+apache2 -v
+mysql
+php -v
+Verify Apache2 is Active and Running
+
+service apache2 status
+
+
+Verify Web Server Ports are Open and Allowed through Firewall
+ufw status verbose
+
+
+Create Virtual Host File
+nano /etc/apache2/sites-available/your_domain.conf
+Add Following Code in Virtual Host File
+
+
+<VirtualHost *:80>
+    ServerName www.example.com
+    ServerAdmin contact@example.com
+    DocumentRoot /var/www/project_folder_name
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+Enable Virtual Host
+cd /etc/apache2/sites-available/
+sudo a2ensite your_domain.conf
+
+
+You can Disable Default Virtual Host
+
+cd /etc/apache2/sites-available/
+a2dissite 000-default.conf
+
+
+Restart Apache2:
+
+sudo service apache2 restart
+
+
+
+...................if update again your current build Again.................................
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# sudo rm -rf /var/www/build
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# sudo mv build /var/www
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# cd /var/www/
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/www# ls -a
+.  ..  build  html
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/www# cd build/
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/www/build# ls
+asset-manifest.json  favicon.ico  index.html  logo192.png  logo512.png  manifest.json  robots.txt  static
+root@ubuntu-s-1vcpu-2gb-blr1-01:/var/www/build# cd /
+root@ubuntu-s-1vcpu-2gb-blr1-01:/# ls
+bin                dev   lib                lost+found  opt   run                 snap  tmp  www
+bin.usr-is-merged  etc   lib.usr-is-merged  media       proc  sbin                srv   usr
+boot               home  lib64              mnt         root  sbin.usr-is-merged  sys   var
+root@ubuntu-s-1vcpu-2gb-blr1-01:/# cd /etc/apache2/sites-available
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# ls
+authorized_keys  srikk.com.conf  srikk.online.conf
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo nano srikk.online.conf
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo a2ensite  srikk.online.conf
+Site srikk.online already enabled
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# service apache2 restart
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo service apache2 restart
+.................................................................................
+
+root@ubuntu-s-1vcpu-2gb-blr1-01:~# cd /etc/apache2/sites-available
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# ls
+authorized_keys  srikk.com.conf  srikk.online.conf
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo a2ensite  srikk.online.conf
+Site srikk.online already enabled
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo service apache2 restart
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# nano srikk.online.conf
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo cp srikk.online.conf keshav.conf
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo nano keshav.conf
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo a2ensite keshav.conf
+Enabling site keshav.
+To activate the new configuration, you need to run:
+  systemctl reload apache2
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo systemctl reload apache2
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo nano keshav.conf
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo systemctl reload apache2
+root@ubuntu-s-1vcpu-2gb-blr1-01:/etc/apache2/sites-available# sudo nano keshav.conf
+
+...........................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

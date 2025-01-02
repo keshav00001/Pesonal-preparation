@@ -1,0 +1,20 @@
+<html>
+<script>
+    // Given string
+    const str = "H : : i: : ) h: : )w : ) )))ar(((( e : ( y: : (o: : ((u : ) : )d:::oi )))n:g:: t: (o:da: : ::y";
+
+    // Function to count occurrences of ": )"
+    function countOccurrences(substring, string) {
+        // Split the string by the substring and get the length of the resulting array
+        const parts = string.split(substring);
+        // The count of occurrences is the number of parts minus one
+        return parts.length - 1;
+    }
+
+    // Count occurrences of ": )"
+    const count = countOccurrences(": )", str);
+    console.log(`The count of ": )" is: ${count}`);
+
+</script>
+
+</html>

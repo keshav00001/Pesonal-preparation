@@ -1,0 +1,84 @@
+<html>
+
+     <!-- Using prdefind method string palindrom  -->
+    <script>
+function isPalindrome(str) {
+  // Convert the string to lowercase and remove any non-alphanumeric characters
+  const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  
+  // Reverse the cleaned string
+  const reversedStr = cleanedStr.split('').reverse().join('');
+  
+  // Check if the original cleaned string is equal to its reverse
+  return cleanedStr === reversedStr;
+}
+
+// Example usage:
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("hello")); // false
+console.log(isPalindrome("A man, a plan, a canal, Panama")); // true
+
+    </script>
+
+
+
+<!-- Using SImple way -->
+
+<script>
+
+const checkPalindrom = (str) => {
+    let newstr2 = str;
+    let newstr = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        newstr += str[i];
+    }
+    
+    // Check if the original string is equal to the reversed string
+    return newstr === newstr2;
+};
+
+console.log(checkPalindrom("racecar")); // true
+console.log(checkPalindrom("hello"));   // false
+
+</script>
+
+
+
+
+<!-- 2nd Way -->
+
+<script>
+    function checkPalindrome(string) {
+    // Convert the string to lowercase and remove non-alphanumeric characters
+    const cleanedString = string.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    // Find the length of the cleaned string
+    const len = cleanedString.length;
+
+    // Loop through half of the string
+    for (let i = 0; i < len / 2; i++) {
+        // Check if first and last characters are the same
+        if (cleanedString[i] !== cleanedString[len - 1 - i]) {
+            return 'It is not a palindrome';
+        }
+    }
+    return 'It is a palindrome';
+}
+
+// Take input from the user
+const string = prompt('Enter a string: ');
+
+// Call the function and display the result
+const value = checkPalindrome(string);
+console.log(value);
+
+</script>
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,39 @@
+<html>
+<script>
+    const array = [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 8];
+
+    // Count the occurrences using reduce
+    const counts = array.reduce((acc, value) => {
+        acc[value] = (acc[value] || 0) + 1;
+        return acc;
+    }, {});
+
+    console.log(counts);
+
+</script>
+
+<!-- // 2nd WAy -->
+
+
+
+<script>
+    const array2 = [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 8];
+
+const cont = {}; // Object to store counts
+
+for (let i = 0; i < array2.length; i++) {
+  const value = array2[i];
+  if (cont[value] !== undefined) {
+    cont[value]++;
+  } else {
+    cont[value] = 1;
+  }
+}
+
+console.log(cont);
+
+</script>
+
+
+
+</html>

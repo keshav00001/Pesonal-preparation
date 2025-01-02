@@ -1,0 +1,35 @@
+<html>
+<script>
+    var tall = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 11];
+    var sumOdd = 0;
+    var sumEven = 0;
+
+    for (var i = 0; i < tall.length; i++) {
+        if (tall[i] % 2 == 0) {
+            sumEven++
+        } else {
+            sumOdd++
+        }
+    }
+
+    console.log("Odd : " + sumOdd);
+    console.log("Par : " + sumEven);
+</script>
+
+
+<!-- //  only even no -->
+
+<script>
+    function getEvenNumbers(arr) {
+  return arr.filter(num => num % 2 === 0);
+}
+
+// Example usage:
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evenNumbers = getEvenNumbers(numbers);
+console.log(evenNumbers); // Output: [2, 4, 6, 8, 10]
+</script>
+
+
+
+</html>
